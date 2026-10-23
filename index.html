@@ -5,209 +5,277 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>São Pedro do Ivaí: Nossa História, Nossa Terra</title>
     <style>
-        /* Configurações Gerais e Cores */
+        /* Configurações de Variáveis e Design Moderno */
         :root {
-            --verde-principal: #1b4d3e;
-            --verde-claro: #2c6b56;
-            --dourado: #c5a059;
-            --fundo: #f4f7f5;
-            --texto: #2d3748;
-            --branco: #ffffff;
+            --cor-primaria: #2d3748;
+            --cor-secundaria: #4a5568;
+            --detalhe-ouro: #d4af37;
+            --fundo-pagina: #f7fafc;
+            --fundo-card: #ffffff;
+            --texto-escuro: #1a202c;
+            --texto-claro: #edf2f7;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
         body {
-            background-color: var(--fundo);
-            color: var(--texto);
-            line-height: 1.6;
+            background-color: var(--fundo-pagina);
+            color: var(--texto-escuro);
+            line-height: 1.7;
         }
 
-        /* Cabeçalho com imagem real da Praça Central e da Igreja de São Pedro do Ivaí */
+        /* Hero Banner - ADICIONE SEU LINK DO GITHUB NA URL ABAIXO */
         header {
-            background: linear-gradient(rgba(27, 77, 62, 0.75), rgba(27, 77, 62, 0.9)), url('https://blogdomarcosjunior.com.br') no-repeat center center/cover;
-            color: var(--branco);
+            position: relative;
+            background-image: linear-gradient(to bottom, rgba(26, 32, 44, 0.45), rgba(26, 32, 44, 0.85)), 
+                             url('COLE_AQUI_O_LINK_DIRETO_DA_SUA_FOTO_DO_GITHUB');
+            background-repeat: no-repeat;
+            background-position: center 45%;
+            background-size: cover;
+            color: var(--texto-claro);
             text-align: center;
-            padding: 120px 20px;
-            border-bottom: 5px solid var(--dourado);
+            padding: 150px 20px;
+            border-bottom: 5px solid var(--detalhe-ouro);
         }
 
         header h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 12px;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 5px rgba(0,0,0,0.7);
+            letter-spacing: 3px;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.8);
         }
 
         header p {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-style: italic;
-            color: var(--dourado);
+            color: var(--detalhe-ouro);
+            font-weight: 500;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+            letter-spacing: 1px;
+        }
+
+        .tag-trabalho {
+            margin-top: 30px;
+            font-size: 0.85rem;
             font-weight: 600;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-        }
-
-        .trabalho-info {
-            margin-top: 25px;
-            font-size: 0.9rem;
-            background-color: rgba(0, 0, 0, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            background-color: rgba(212, 175, 55, 0.25);
+            color: var(--detalhe-ouro);
             display: inline-block;
-            padding: 10px 20px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 8px 24px;
+            border-radius: 4px;
+            border: 1px solid var(--detalhe-ouro);
         }
 
-        /* Menu de Navegação */
+        /* Menu de Navegação Premium */
         nav {
-            background-color: var(--verde-principal);
+            background-color: var(--cor-primaria);
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
 
         nav ul {
             display: flex;
             justify-content: center;
             list-style: none;
+            max-width: 1100px;
+            margin: 0 auto;
         }
 
         nav ul li a {
             display: block;
-            color: var(--branco);
+            color: var(--texto-claro);
             text-decoration: none;
-            padding: 15px 25px;
-            font-weight: bold;
-            transition: all 0.3s ease;
+            padding: 20px 30px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
         nav ul li a:hover {
-            background-color: var(--verde-claro);
-            color: var(--dourado);
+            color: var(--detalhe-ouro);
+            background-color: rgba(255, 255, 255, 0.03);
         }
 
-        /* Container de Conteúdo */
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 0 20px;
+        /* Layout do Conteúdo */
+        .conteudo-principal {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 0 25px;
         }
 
-        /* Estilização das Seções */
+        /* Estilização Avançada das Seções */
         section {
-            background-color: var(--branco);
-            margin-bottom: 40px;
-            padding: 40px;
+            background-color: var(--fundo-card);
+            margin-bottom: 50px;
+            padding: 50px;
             border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border-left: 6px solid var(--verde-principal);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+            border-top: 4px solid var(--cor-primaria);
         }
 
         h2 {
-            color: var(--verde-principal);
-            font-size: 2rem;
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--fundo);
-            padding-bottom: 10px;
-            display: flex;
-            align-items: center;
+            color: var(--cor-primaria);
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #edf2f7;
+            letter-spacing: -0.5px;
         }
 
         h3 {
-            color: var(--verde-claro);
-            margin: 20px 0 10px 0;
-            font-size: 1.3rem;
+            color: var(--cor-secundaria);
+            margin: 30px 0 12px 0;
+            font-size: 1.4rem;
+            font-weight: 600;
         }
 
         p {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             text-align: justify;
+            color: #4a5568;
+            font-size: 1.05rem;
         }
 
-        /* Grid para Informações Geográficas */
-        .geo-grid {
+        /* Grid Organizacional de Geografia */
+        .geo-estrutura {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 20px;
-            margin-top: 25px;
+            gap: 25px;
+            margin-top: 35px;
         }
 
-        .geo-card {
-            background-color: var(--fundo);
-            padding: 20px;
-            border-radius: 6px;
-            border-top: 4px solid var(--dourado);
-            text-align: center;
-        }
-
-        .geo-card strong {
-            display: block;
-            color: var(--verde-principal);
-            font-size: 1.1rem;
-            margin-bottom: 5px;
-        }
-
-        /* Lista de Expressões Artísticas */
-        .arte-lista {
-            list-style: none;
-        }
-
-        .arte-lista li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 15px;
-        }
-
-        .arte-lista li::before {
-            content: "✦";
-            position: absolute;
-            left: 0;
-            color: var(--dourado);
-            font-size: 1.2rem;
-        }
-
-        /* Rodapé do Site */
-        footer {
-            background-color: var(--verde-principal);
-            color: var(--branco);
-            text-align: center;
+        .cartao-dados {
+            background-color: var(--fundo-pagina);
             padding: 25px 20px;
-            margin-top: 60px;
-            border-top: 4px solid var(--dourado);
-            font-size: 0.9rem;
+            border-radius: 6px;
+            border-left: 4px solid var(--detalhe-ouro);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cartao-dados:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+        }
+
+        .cartao-dados strong {
+            display: block;
+            color: var(--cor-primaria);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            font-weight: 700;
+        }
+
+        .cartao-dados span {
+            color: #4a5568;
+            font-size: 0.95rem;
+        }
+
+        /* Lista de Elementos de Arte */
+        .lista-cultural {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .lista-cultural li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 20px;
+            color: #4a5568;
+            font-size: 1.05rem;
+        }
+
+        .lista-cultural li::before {
+            content: "▪";
+            position: absolute;
+            left: 5px;
+            top: -2px;
+            color: var(--detalhe-ouro);
+            font-size: 1.5rem;
+        }
+
+        .lista-cultural li strong {
+            color: var(--texto-escuro);
+        }
+
+        /* Rodapé Institucional */
+        footer {
+            background-color: var(--cor-primaria);
+            color: var(--texto-claro);
+            padding: 40px 20px;
+            margin-top: 80px;
+            border-top: 4px solid var(--detalhe-ouro);
+        }
+
+        .footer-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
         }
 
         footer p {
             text-align: center;
-            margin-bottom: 5px;
+            margin: 0;
+            color: #a0aec0;
+            font-size: 0.95rem;
         }
 
-        /* Responsividade para Celulares */
+        .foco-footer {
+            color: var(--texto-claro);
+            font-weight: 600;
+        }
+
+        .ficha-tecnica {
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 15px 30px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 10px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* Adaptação para Telas Menores (Celulares) */
         @media (max-width: 768px) {
-            header h1 { font-size: 2rem; }
-            nav ul { flex-direction: column; text-align: center; }
-            section { padding: 20px; }
+            header { padding: 100px 15px; background-position: center center; }
+            header h1 { font-size: 2.3rem; }
+            header p { font-size: 1.1rem; }
+            nav ul { flex-direction: column; }
+            nav ul li a { padding: 15px 20px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
+            section { padding: 30px 20px; }
+            h2 { font-size: 1.8rem; }
         }
     </style>
 </head>
 <body>
 
-    <!-- Cabeçalho Principal com foto de São Pedro do Ivaí -->
+    <!-- Cabeçalho com a Imagem Linkada da Igreja do Município -->
     <header>
         <h1>São Pedro do Ivaí</h1>
         <p>Nossa História, Nossa Terra</p>
-        <div class="trabalho-info">
-            Trabalho Integrador: Geografia, História e Arte do Paraná
+        <div class="tag-trabalho">
+            Trabalho Integrador Acadêmico
         </div>
     </header>
 
-    <!-- Menu de Navegação -->
+    <!-- Menu de Navegação Superior -->
     <nav>
         <ul>
             <li><a href="#historia">História do Paraná</a></li>
@@ -216,10 +284,10 @@
         </ul>
     </nav>
 
-    <!-- Conteúdo do Site -->
-    <div class="container">
+    <!-- Container Principal do Conteúdo -->
+    <div class="conteudo-principal">
 
-        <!-- SEÇÃO: HISTÓRIA -->
+        <!-- SEÇÃO 1: HISTÓRIA -->
         <section id="historia">
             <h2>Nossa História</h2>
             <p>A história de <strong>São Pedro do Ivaí</strong> está intimamente ligada ao ciclo de expansão e colonização do Norte do Paraná em meados do século XX. A fertilidade da famosa "terra roxa" atraiu migrantes de várias partes do Brasil — em especial paulistas e mineiros —, além de imigrantes europeus e asiáticos em busca de novas oportunidades na cafeicultura.</p>
@@ -228,52 +296,11 @@
             <p>O povoamento da localidade ganhou força nas décadas de 1940 e 1950, impulsionado por companhias de terras que planejavam o loteamento da região. O desbravamento da mata virgem abriu espaço para o plantio e para o comércio local sustentável. O município foi oficialmente desmembrado e emancipado politicamente no dia <strong>30 de dezembro de 1955</strong>, consolidando sua identidade administrativa e social no cenário paranaense.</p>
         </section>
 
-        <!-- SEÇÃO: GEOGRAFIA -->
+        <!-- SEÇÃO 2: GEOGRAFIA -->
         <section id="geografia">
             <h2>Nossa Terra</h2>
             <p>Sob a ótica da Geografia do Paraná, São Pedro do Ivaí está localizado na mesorregião do <strong>Norte Central Paranaense</strong>, mais especificamente na microrregião de Apucarana. Seu território é marcado pelo solo de origem basáltica e por uma hidrografia estratégica, banhado pelas bacias que dão vida à exuberante vegetação local.</p>
             
             <h3>Aspectos Geográficos Chave</h3>
-            <div class="geo-grid">
-                <div class="geo-card">
-                    <strong>📍 Localização</strong>
-                    Norte Central Paranaense
-                </div>
-                <div class="geo-card">
-                    <strong>🌊 Hidrografia</strong>
-                    Proximidade e influência do Rio Ivaí
-                </div>
-                <div class="geo-card">
-                    <strong>🌱 Economia</strong>
-                    Forte base na agricultura (Soja, Milho e Cana-de-açúcar)
-                </div>
-                <div class="geo-card">
-                    <strong>🌳 Bioma</strong>
-                    Mata Atlântica (Floresta Estacional Semidecidual)
-                </div>
-            </div>
-        </section>
-
-        <!-- SEÇÃO: ARTE E CULTURA -->
-        <section id="arte">
-            <h2>Nossa Arte e Cultura</h2>
-            <p>A produção artística e cultural de São Pedro do Ivaí reflete a rica miscigenação de sua população. A convergência de tradições gaúchas, paulistas, mineiras e nordestinas moldou festas populares, a culinária regional e o artesanato local, criando uma identidade singular no estado do Paraná.</p>
-            
-            <h3>Manifestações em Destaque</h3>
-            <ul class="arte-lista">
-                <li><strong>Festas Tradicionais:</strong> Celebrações religiosas e rurais, como as festas do padroeiro São Pedro, que movimentam a comunidade e preservam costumes antigos através da música sertaneja e da culinária típica.</li>
-                <li><strong>Artesanato Local:</strong> Produção manual baseada em elementos naturais da região, utilizando palhas, sementes e técnicas de costura passadas de geração em geração.</li>
-                <li><strong>Patrimônio Histórico e Arquitetônico:</strong> A arquitetura singular da Igreja Matriz São Pedro Apóstolo (com desenho arredondado que se destaca na paisagem urbana) e monumentos públicos que contam visualmente a trajetória de fé dos pioneiros.</li>
-            </ul>
-        </section>
-
-    </div>
-
-    <!-- Rodapé -->
-    <footer>
-        <p>&copy; 2026 - São Pedro do Ivaí: Nossa História, Nossa Terra</p>
-        <p>Desenvolvido para o Trabalho Integrador de Geografia, História e Arte do Paraná</p>
-    </footer>
-
-</body>
-</html>
+            <div class="geo-estrutura">
+                <div class="cartao-dados">
