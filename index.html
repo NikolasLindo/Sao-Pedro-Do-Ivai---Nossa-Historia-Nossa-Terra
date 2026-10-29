@@ -87,6 +87,62 @@ body.started .exit-fullscreen{display:inline-flex;animation:controlAppear .45s .
 .group-btn{transition:background .25s,color .25s,transform .25s,box-shadow .25s}
 .group-btn:active,.map-link:active{transform:scale(.97)}
 @media(prefers-reduced-motion:reduce){.map-core:after,.map-link:after{animation:none;transition:none}}
+
+/* NOVO DESIGN DO GRUPO 1 — capítulos interativos, sem mapa confuso */
+.map-heading{max-width:1120px;margin:18px auto 28px;padding:0 0 22px 0;border-left:0;border-bottom:1px solid #b9c8a7}
+.map-heading:before{content:"PATRIMÔNIO • PARANÁ";display:block;margin-bottom:12px;color:#71885e;font-size:.72rem;font-weight:900;letter-spacing:.18em}
+.map-heading .eyebrow{display:none}
+.map-heading:after{content:"CADERNO 01 / 03";top:6px;right:0;padding:9px 12px;border:1px solid #cbd6bc;border-radius:999px;background:#fbfbedb8;color:#647958;font-size:.65rem;letter-spacing:.13em}
+.map-heading h2{max-width:800px;margin:0 0 12px;font-size:clamp(2.2rem,5vw,4.5rem);line-height:.99;letter-spacing:-.07em}
+.map-heading p{max-width:660px;color:#63725c;font-size:1rem;line-height:1.75}
+.map-core{display:none}
+.map-links{height:auto;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;width:min(1120px,100%);margin:0 auto 13px;padding:0}
+.map-links:before,.map-links:after{display:none}
+.map-link,.map-link:nth-child(1),.map-link:nth-child(2),.map-link:nth-child(3){position:relative;inset:auto;transform:none;width:auto;min-height:104px;display:flex;align-items:center;gap:13px;padding:17px 16px;border:1px solid #d4ddc8;border-radius:19px;background:#f9faefdc;box-shadow:0 8px 24px #344a2a0b;text-align:left;overflow:hidden}
+.map-link:before{display:none}
+.map-link .tab-number{flex:none;width:39px;height:39px;display:grid;place-items:center;border-radius:13px;background:#e7ecd9;color:#62784f;font-size:.8rem;font-weight:900;letter-spacing:.04em}
+.map-link .tab-copy{display:flex;flex:1;flex-direction:column;gap:5px;min-width:0;margin:0;color:#34472f;letter-spacing:0;text-transform:none}
+.map-link .tab-copy b{font-size:.9rem;line-height:1.25}
+.map-link .tab-copy small{color:#78836f;font-size:.72rem;line-height:1.4;font-weight:550}
+.map-link .tab-arrow{align-self:flex-start;color:#91a17d;font-size:1.05rem;transition:transform .25s,color .25s}
+.map-link:after{display:none}
+.map-link:hover{transform:translateY(-3px);border-color:#9eb48a;box-shadow:0 14px 28px #344a2a15}
+.map-link.active{background:#e9edda;border-color:#879e70;box-shadow:inset 0 0 0 1px #b7c7a5,0 12px 30px #344a2a12}
+.map-link.active .tab-number{background:#344b34;color:#f7f5df}
+.map-link.active .tab-arrow{transform:translate(2px,-2px);color:#405a39}
+.map-hint{max-width:1120px;margin:0 auto 18px;padding:0 2px;text-align:left;font-size:.78rem;color:#75816d}
+.branches{max-width:1120px;margin:0 auto;display:block}
+.branches:before{display:none}
+.branch,.branch:nth-child(2){display:none;grid-template-columns:minmax(260px,38%) minmax(0,1fr);gap:0;margin:0;border:1px solid #d6dfca;border-radius:26px;background:#fbfbeded;box-shadow:0 22px 60px #2c42221a;overflow:hidden}
+.branch.is-selected{display:grid;animation:chapterIn .55s cubic-bezier(.2,.75,.25,1) both}
+.branch:before,.branch:nth-child(2):before{display:none}
+.branch-image{min-height:100%;height:auto;min-height:480px;border-radius:0;position:relative;background:#dce8c9}
+.branch-image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.branch-image:before{background:linear-gradient(180deg,#20322200 45%,#203222a8 100%)}
+.branch-image:after{content:attr(data-caption);right:auto;left:22px;bottom:22px;padding:9px 12px;border-radius:999px;background:#f8faebed;color:#3f5538;letter-spacing:.08em}
+.branch-body{padding:clamp(22px,3.5vw,42px)}
+.branch-label{font-size:.67rem;letter-spacing:.13em}
+.branch h3{font-size:clamp(1.45rem,2.4vw,2.15rem);line-height:1.12;letter-spacing:-.045em;margin:16px 0 10px}
+.branch-intro{font-size:.93rem;line-height:1.75;color:#64715d;margin-bottom:20px}
+.topic{margin-top:8px;padding:13px 42px 13px 14px;border:1px solid #e0e5d5;border-radius:15px;background:#f4f5e9;cursor:pointer}
+.topic:hover{background:#edf1e2;border-color:#c8d5b8}
+.topic:after{right:14px;top:14px;display:grid;place-items:center;width:22px;height:22px;border-radius:8px;background:#e3e9d4;color:#5f784d;font-size:1rem}
+.topic strong{font-size:.87rem;line-height:1.4;gap:0}
+.topic strong:before{display:none}
+.topic p{font-size:.83rem;line-height:1.7;color:#5d6b58}
+.topic.open{background:#fffdf3;border-color:#c8d6b7;box-shadow:inset 3px 0 #c6b34c}
+.branch-foot{margin-top:17px;padding:15px 16px;border-left:3px solid #c6b34c;border-radius:0 14px 14px 0;background:#edf0dd;font-size:.82rem;line-height:1.65}
+.map-note{max-width:1120px;margin:24px auto 8px;padding:16px 18px;border:1px solid #d7dfcc;border-radius:16px;background:#ffffff70;text-align:left;font-size:.83rem;line-height:1.6}
+@keyframes chapterIn{from{opacity:0;transform:translateY(18px) scale(.99);filter:blur(4px)}to{opacity:1;transform:translateY(0) scale(1);filter:blur(0)}}
+@media(max-width:760px){.map-heading{margin:8px auto 22px;padding-bottom:18px}.map-heading:after{position:static;display:inline-block;margin-top:14px}.map-links{grid-template-columns:1fr;gap:8px}.map-link,.map-link:nth-child(1),.map-link:nth-child(2),.map-link:nth-child(3){min-height:76px;padding:12px 14px}.map-hint{margin-bottom:13px}.branch,.branch:nth-child(2){grid-template-columns:1fr;border-radius:20px}.branch-image{height:220px;min-height:220px}.branch-image img{position:absolute}.branch-body{padding:21px}.branch h3{font-size:1.55rem}.topic{padding-right:40px}}
+@media(prefers-reduced-motion:reduce){.branch.is-selected{animation:none}.map-link:hover{transform:none}}
+/* CORREÇÃO: a terceira aba não deve manter o translateX do layout antigo */
+.map-links .map-link:nth-child(3),
+.map-links .map-link:nth-child(3):hover,
+.map-links .map-link:nth-child(3).active,
+.map-links .map-link:nth-child(3):hover.active{left:auto;right:auto;top:auto;bottom:auto;transform:translateY(0)}
+.map-links .map-link:nth-child(3):hover{transform:translateY(-3px)}
+.map-links .map-link:nth-child(3):active{transform:scale(.98)}
 </style>
 </head>
 <body>
@@ -94,13 +150,13 @@ body.started .exit-fullscreen{display:inline-flex;animation:controlAppear .45s .
 <main>
 <section class="screen intro" id="intro" aria-label="Introdução"><div class="intro-card"><div class="eyebrow">Trabalho Integrador · Paraná</div><h1>São Pedro do Ivaí<span>Nossa História, Nossa Terra</span></h1><p class="subtitle">Uma apresentação sobre o lugar que faz parte da nossa história, da nossa cultura e da nossa identidade.</p><div class="actions"><button class="btn btn-secondary" id="fullscreenBtn" type="button">⛶ Tela cheia</button><button class="btn btn-primary" id="startBtn" type="button">Começar apresentação <span aria-hidden="true">→</span></button></div><div class="bottom-note">HISTÓRIA · GEOGRAFIA · ARTE</div></div></section>
 <section class="screen presentation" id="presentation" aria-label="Apresentação dos grupos" aria-hidden="true"><header class="topbar"><div class="brand"><div class="brand-mark"><img src="https://raw.githubusercontent.com/NikolasLindo/Sao-Pedro-Do-Ivai---Nossa-Historia-Nossa-Terra/refs/heads/main/brasao.png" alt="Brasão de São Pedro do Ivaí" onerror="this.style.display='none'"></div><div><div class="brand-title">São Pedro do Ivaí</div><div class="brand-subtitle">Nossa História, Nossa Terra</div></div></div><nav class="group-nav" aria-label="Navegação dos grupos"><button class="group-btn active" data-group="1" aria-pressed="true">Grupo 1</button><button class="group-btn" data-group="2" aria-pressed="false">Grupo 2</button><button class="group-btn" data-group="3" aria-pressed="false">Grupo 3</button><button class="group-btn" data-group="4" aria-pressed="false">Grupo 4</button><button class="group-btn" data-group="5" aria-pressed="false">Grupo 5</button></nav></header>
-<div class="content-wrap" id="contentWrap"><div class="mindmap" id="mindmap"><div class="map-heading"><div class="eyebrow">Grupo 1 · História e patrimônio do Paraná</div><h2>Memória que conecta passado, presente e futuro</h2><p>Três caminhos para compreender, valorizar e preservar o patrimônio paranaense.</p></div><div class="map-core">🧭 PATRIMÔNIO DO PARANÁ<small>História · Natureza · Preservação</small></div>
+<div class="content-wrap" id="contentWrap"><div class="mindmap" id="mindmap"><div class="map-heading"><div class="eyebrow">Grupo 1 · História e patrimônio do Paraná</div><h2>Memória que conecta passado, presente e futuro</h2><p>Três caminhos para compreender, valorizar e preservar o patrimônio paranaense.</p></div><div class="map-core" aria-hidden="true">🧭 PATRIMÔNIO DO PARANÁ<small>História · Natureza · Preservação</small></div>
 <div class="map-links" role="group" aria-label="Ramos do mapa mental">
-<button class="map-link active" data-focus="0" type="button"><span>Ramo 01</span>⛪ Memória histórica</button>
-<button class="map-link" data-focus="1" type="button"><span>Ramo 02</span>🍃 Natureza e paisagem</button>
-<button class="map-link" data-focus="2" type="button"><span>Ramo 03</span>🔮 Preservar o futuro</button>
+<button class="map-link active" data-focus="0" type="button"><span class="tab-number">01</span><span class="tab-copy"><b>Memória histórica</b><small>Ruínas e ocupação colonial</small></span><span class="tab-arrow">↗</span></button>
+<button class="map-link" data-focus="1" type="button"><span class="tab-number">02</span><span class="tab-copy"><b>Natureza e paisagem</b><small>Parques e caminhos históricos</small></span><span class="tab-arrow">↗</span></button>
+<button class="map-link" data-focus="2" type="button"><span class="tab-number">03</span><span class="tab-copy"><b>Preservar o futuro</b><small>Pesquisa, museus e memória</small></span><span class="tab-arrow">↗</span></button>
 </div>
-<p class="map-hint">Selecione um dos três ramos: o mapa mostra somente o tema escolhido. Dentro dele, toque nos tópicos para abrir os detalhes.</p>
+<p class="map-hint">Explore os três capítulos abaixo. Escolha um tema e abra os tópicos para descobrir os detalhes.</p>
 <div class="branches">
 <article class="branch is-selected" data-branch="0"><div class="branch-image"><img src="https://raw.githubusercontent.com/NikolasLindo/Sao-Pedro-Do-Ivai---Nossa-Historia-Nossa-Terra/refs/heads/main/sitioarqueologico.png" alt="Sítio arqueológico histórico" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1000&q=80'"></div><div class="branch-body"><span class="branch-label">⛪ Passado · Séculos XVI–XVIII</span><h3>Sítios Arqueológicos Históricos</h3><p class="branch-intro">Locais que registram o contato entre povos indígenas originários e colonizadores europeus, incluindo espanhóis e portugueses.</p><div class="topic"><strong>Ruínas de Ciudad Real del Guairá — Terra Roxa</strong><p>Antiga cidade espanhola fundada em 1556 às margens do Rio Paraná. Seus vestígios lembram a ocupação colonial e a destruição causada por ataques de bandeirantes paulistas.</p></div><div class="topic"><strong>Redução Jesuítica de Santo Inácio Mini — região de Nossa Senhora de Loreto</strong><p>Vestígios das missões jesuíticas que reuniam milhares de indígenas. A pressão dos conflitos levou ao abandono de reduções e ao deslocamento de populações para outras regiões.</p></div><div class="topic"><strong>Fortaleza de Nossa Senhora dos Prazeres — Ilha do Mel</strong><p>Construída no século XVIII, tinha função militar e ajudava a proteger a Baía de Paranaguá de possíveis invasões estrangeiras.</p></div><div class="branch-foot">💡 Os vestígios arqueológicos ajudam a estudar diferentes povos e períodos da história.</div></div></article>
 <article class="branch" data-branch="1"><div class="branch-image"><img src="https://raw.githubusercontent.com/NikolasLindo/Sao-Pedro-Do-Ivai---Nossa-Historia-Nossa-Terra/refs/heads/main/paisagemcultural.png" alt="Paisagem natural e cultural do Paraná" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1000&q=80'"></div><div class="branch-body"><span class="branch-label">🍃 Natureza · Paisagem</span><h3>Patrimônio Natural e Paisagens Culturais</h3><p class="branch-intro">A geografia paranaense preserva ecossistemas, formações geológicas e caminhos históricos que ligam a natureza à vida das pessoas.</p><div class="topic"><strong>Parque Nacional do Iguaçu — Foz do Iguaçu</strong><p>Protege as Cataratas do Iguaçu e uma área de grande biodiversidade. É reconhecido como Patrimônio Mundial Natural pela UNESCO.</p></div><div class="topic"><strong>Parque Estadual de Vila Velha — Ponta Grossa</strong><p>Famoso por suas formações de arenito, esculpidas pela ação do vento, da chuva e de outros processos naturais ao longo de milhões de anos.</p></div><div class="topic"><strong>Caminho do Itupava e Estrada da Graciosa</strong><p>Rotas históricas da Serra do Mar que conectavam o planalto ao litoral e foram importantes para o transporte de mercadorias, como ouro e erva-mate.</p></div><div class="topic"><strong>Abrigo de Itatiba</strong><p>Sítio sob abrigo rochoso na região central do estado, relevante por escavações que encontraram vestígios de antigas indústrias líticas — ferramentas de pedra.</p></div><div class="branch-foot">🌱 Preservar a paisagem também é proteger a biodiversidade e a memória dos caminhos humanos.</div></div></article>
@@ -130,7 +186,8 @@ function initMapControls(){
    mapLinks.forEach((item,i)=>{item.classList.toggle('active',i===index);item.setAttribute('aria-pressed',String(i===index));});
    branches.forEach((branch,i)=>{branch.classList.toggle('is-selected',i===index);branch.classList.remove('branch-arrive');});
    const selected=branches[index];
-   if(selected){void selected.offsetWidth;selected.classList.add('branch-arrive');if(scroll)selected.scrollIntoView({behavior:'smooth',block:'start'});}
+   if(selected){void selected.offsetWidth;selected.classList.add('branch-arrive');}
+   // A troca de capítulo não desloca a página: mantém as três abas visíveis e evita saltos no terceiro botão.
  }
  mapLinks.forEach((button,index)=>{
    button.setAttribute('aria-label','Mostrar '+['Sítios arqueológicos históricos','Patrimônio natural e paisagens culturais','O futuro da memória'][index]);
