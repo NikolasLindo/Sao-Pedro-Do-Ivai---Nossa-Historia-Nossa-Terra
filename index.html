@@ -6,7 +6,7 @@
 <style>
 :root{--cream:#f7f8e9;--yellow:#f1e7a8;--yellow-deep:#d9c96d;--green:#d8e7c5;--green-deep:#7e9d6b;--ink:#28372a;--muted:#62705d;--glass:rgba(250,251,239,.78);--line:rgba(53,76,47,.16);--shadow:0 24px 80px rgba(25,39,24,.16)}
 *{box-sizing:border-box}html,body{width:100%;min-height:100%;margin:0}body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink);background:var(--cream);min-height:100vh}button{font:inherit}button:focus-visible,a:focus-visible{outline:3px solid #8ba96d;outline-offset:4px}
-.background{position:fixed;inset:-18px;z-index:-3;background:url('imgs/spi.png') center/cover no-repeat;filter:blur(3px) saturate(.92);transform:scale(1.04)}.background:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(247,248,233,.75),rgba(224,237,207,.72) 50%,rgba(246,235,177,.72))}.grain{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.12;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E")}
+.background{position:fixed;inset:-18px;z-index:-3;background:url('spi.png') center/cover no-repeat;filter:blur(3px) saturate(.92);transform:scale(1.04)}.background:after{content:"";position:absolute;inset:0;background:linear-gradient(135deg,rgba(247,248,233,.75),rgba(224,237,207,.72) 50%,rgba(246,235,177,.72))}.grain{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.12;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.16'/%3E%3C/svg%3E")}
 .screen{position:fixed;inset:0;display:grid;place-items:center;padding:clamp(18px,4vw,48px);transition:opacity .65s ease,transform .65s ease,filter .65s ease}.intro-card{width:min(860px,100%);padding:clamp(28px,6vw,70px);text-align:center;border:1px solid rgba(255,255,255,.76);border-radius:32px;background:var(--glass);box-shadow:var(--shadow);backdrop-filter:blur(22px);position:relative;overflow:hidden;animation:rise .8s both}.eyebrow{display:inline-flex;gap:10px;align-items:center;padding:9px 14px;border:1px solid var(--line);border-radius:999px;background:#ffffff70;color:#526c47;font-size:.74rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}.eyebrow:before{content:"";width:7px;height:7px;background:#8ea96e;border-radius:50%}h1{margin:25px 0 12px;font-size:clamp(2.25rem,6.4vw,5.3rem);line-height:.98;letter-spacing:-.065em}h1 span{display:block;color:#718e5b}.subtitle{max-width:560px;margin:22px auto 0;color:#596a53;line-height:1.75}.actions{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-top:34px}.btn{min-height:50px;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:0 22px;border:1px solid transparent;border-radius:15px;cursor:pointer;font-weight:750;transition:transform .2s,box-shadow .2s}.btn:hover{transform:translateY(-2px)}.btn-primary{color:#263728;background:linear-gradient(135deg,#e9e7a9,#cfe1b9);box-shadow:0 10px 25px #6a845233}.btn-secondary{color:#40543a;background:#ffffff8a;border-color:#435c3a2e}.bottom-note{margin-top:34px;color:#75816d;font-size:.76rem;letter-spacing:.06em}
 .presentation{display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;padding:0;opacity:0;visibility:hidden;transform:scale(1.025) translateY(15px);filter:blur(10px)}body.started .intro{opacity:0;transform:scale(.96) translateY(-16px);pointer-events:none}body.started .presentation{opacity:1;visibility:visible;transform:none;filter:none}.topbar{flex:none;min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:13px clamp(16px,4vw,48px);border-bottom:1px solid #42593724;background:#f8faebd9;backdrop-filter:blur(22px);box-shadow:0 8px 35px #22311f0f}.brand{display:flex;align-items:center;gap:12px}.brand-mark{width:46px;height:46px;overflow:hidden;border-radius:13px;box-shadow:0 3px 10px #374b2b1f}.brand-mark img{width:100%;height:100%;object-fit:cover}.brand-title{font-size:.95rem;font-weight:850}.brand-subtitle{margin-top:3px;color:var(--muted);font-size:.72rem}.group-nav{display:flex;justify-content:flex-end;flex-wrap:wrap;gap:7px}.group-btn{min-height:42px;padding:0 15px;border:1px solid transparent;border-radius:12px;color:#52664a;background:transparent;cursor:pointer;font-size:.86rem;font-weight:750}.group-btn:hover{background:#dae7c799}.group-btn.active{color:#2d402b;background:linear-gradient(135deg,#f0e8ac,#d5e6c3);border-color:#5e784b29;box-shadow:0 5px 16px #4b64391a}
 .content-wrap{flex:1;min-height:0;overflow:auto;padding:clamp(16px,3vw,34px)}.mindmap{width:min(1450px,100%);margin:0 auto}.map-heading{text-align:center;margin:4px 0 22px}.map-heading .eyebrow{letter-spacing:.12em}.map-heading h2{font-size:clamp(1.7rem,3vw,2.8rem);letter-spacing:-.045em;margin:13px 0 7px}.map-heading p{color:var(--muted);margin:0;line-height:1.6}.map-core{width:fit-content;max-width:100%;margin:0 auto 24px;padding:13px 24px;border:1px solid #5e784b35;border-radius:999px;background:linear-gradient(135deg,#f0e8ac,#d5e6c3);box-shadow:0 10px 30px #526c4717;text-align:center;font-weight:850}.map-core small{display:block;font-size:.72rem;font-weight:650;color:#617452;margin-top:3px;letter-spacing:.05em}
@@ -833,18 +833,211 @@ body.started .exit-fullscreen{display:inline-flex;animation:controlAppear .45s .
   }
 }
 
+
+/* ===== LIMPA TRILHAS + MINIMALISTA + TÍTULO EM DESTAQUE ===== */
+
+/* zero trilha */
+.branches:before, .group4 .branches:before, .mindmap .branches:before,
+.branches:after, .group4 .branches:after,
+.branch-unit:before, .branch-unit:after,
+.group4 .branch-unit:before, .group4 .branch-unit:after,
+.trail-svg, .trail-line {
+  content: none !important;
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  background: none !important;
+  background-image: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+/* layout mais limpo */
+.branches, .group4 .branches {
+  gap: 48px !important;
+  max-width: 1200px !important;
+}
+.branch-unit, .group4 .branch-unit {
+  grid-template-columns: minmax(0, 1fr) 32px minmax(0, 1.15fr) !important;
+  gap: 0 !important;
+  align-items: center !important;
+}
+@media (max-width: 760px) {
+  .branch-unit, .group4 .branch-unit, .group4 .branch-unit:nth-child(even) {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* FOTO — minimal, borda fina elegante */
+.branch-photo-outside,
+.group4 .branch-photo-outside {
+  margin: 0 4px !important;
+  padding: 8px !important;
+  border-radius: 20px !important;
+  border: 1px solid #c5d0b4 !important;
+  background: #f7f6ec !important;
+  box-shadow: 0 10px 28px rgba(30, 50, 28, 0.10) !important;
+  overflow: hidden !important;
+  transform: none !important;
+}
+.branch-photo-outside:before,
+.group4 .branch-photo-outside:before {
+  content: none !important;
+  display: none !important;
+}
+.branch-photo-outside:after,
+.group4 .branch-photo-outside:after {
+  content: none !important;
+  display: none !important;
+}
+.branch-photo-outside img,
+.group4 .branch-photo-outside img {
+  border-radius: 14px !important;
+  border: none !important;
+  box-shadow: none !important;
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+}
+.branch-photo-caption {
+  margin: 8px 2px 0 !important;
+  padding: 8px 10px !important;
+  border-radius: 10px !important;
+  background: #2f5037 !important;
+  color: #fff9df !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-size: 0.72rem !important;
+  font-weight: 750 !important;
+  letter-spacing: 0.03em !important;
+  text-align: center !important;
+}
+
+/* CARD — limpo */
+.branch-unit > .branch,
+.group4 .branch-unit > .branch {
+  margin: 0 4px !important;
+  border: 1px solid #d0dac4 !important;
+  border-radius: 20px !important;
+  background: #fbfcf4 !important;
+  box-shadow: 0 10px 28px rgba(30, 50, 28, 0.08) !important;
+  overflow: hidden !important;
+}
+.branch-unit > .branch:before,
+.group4 .branch-unit > .branch:before {
+  content: "" !important;
+  display: block !important;
+  height: 4px !important;
+  border-radius: 20px 20px 0 0 !important;
+  background: linear-gradient(90deg, #c7b45e, #8fa872) !important;
+  box-shadow: none !important;
+}
+.branch-unit > .branch .branch-body {
+  padding: clamp(18px, 2.4vw, 28px) !important;
+}
+.branch-unit > .branch .branch-body:before {
+  content: none !important;
+  display: none !important;
+}
+.branch-unit > .branch .topic {
+  border: 1px solid #e2e8d8 !important;
+  border-left: 3px solid #9bad7d !important;
+  border-radius: 12px !important;
+  background: #fff !important;
+  box-shadow: none !important;
+  padding: 12px 14px !important;
+}
+.branch-unit > .branch .topic:nth-of-type(even) {
+  border-left-color: #c6ae5d !important;
+  background: #faf8f0 !important;
+}
+.branch-unit > .branch .branch-foot {
+  border: 1px solid #e2e8d8 !important;
+  border-left: 3px solid #c6ae5d !important;
+  border-radius: 12px !important;
+  background: #f3f5ea !important;
+  box-shadow: none !important;
+}
+.branch-unit > .branch .branch-label {
+  background: #e8edd9 !important;
+  color: #3d5438 !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-weight: 800 !important;
+}
+
+/* TÍTULOS EM DESTAQUE */
+.map-heading h2 {
+  color: #152218 !important;
+  font-weight: 900 !important;
+  font-size: clamp(2.3rem, 5vw, 3.8rem) !important;
+  letter-spacing: -0.04em !important;
+  line-height: 1.05 !important;
+  border-bottom: 4px solid #c7b45e !important;
+  padding-bottom: 12px !important;
+  margin-bottom: 14px !important;
+  display: inline-block !important;
+  max-width: 100% !important;
+  text-shadow: none !important;
+}
+.branch-unit > .branch h3,
+.branch h3 {
+  color: #152218 !important;
+  font-weight: 900 !important;
+  font-size: clamp(1.35rem, 2vw, 1.75rem) !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1.2 !important;
+  border-bottom: 2px solid #c7b45e !important;
+  padding-bottom: 8px !important;
+  margin: 12px 0 12px !important;
+}
+.topic strong {
+  color: #152218 !important;
+  font-weight: 850 !important;
+  font-size: 0.98rem !important;
+}
+.map-heading:before {
+  color: #5a7348 !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.2em !important;
+}
+.intro-card h1 {
+  color: #152218 !important;
+  font-weight: 900 !important;
+}
+.intro-card h1 span {
+  color: #5a7348 !important;
+  font-weight: 850 !important;
+}
+
+/* menos ruído no restante */
+.journey-intro {
+  border: 1px solid #d5dec8 !important;
+  border-left: 4px solid #c7b45e !important;
+  background: #fbfbed !important;
+  box-shadow: none !important;
+  border-radius: 14px !important;
+}
+.map-core {
+  box-shadow: 0 4px 14px rgba(30,50,28,0.08) !important;
+  border: 1px solid #b9c9a9 !important;
+}
+
 </style>
 </head>
 <body>
 <div class="background" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div>
 <main>
 <section class="screen intro" id="intro" aria-label="Introdução"><div class="intro-card"><div class="eyebrow">Trabalho Integrador · Paraná</div><h1>São Pedro do Ivaí<span>Nossa História, Nossa Terra</span></h1><p class="subtitle">Uma apresentação sobre o lugar que faz parte da nossa história, da nossa cultura e da nossa identidade.</p><div class="actions"><button class="btn btn-secondary" id="fullscreenBtn" type="button">⛶ Tela cheia</button><button class="btn btn-primary" id="startBtn" type="button">Começar apresentação <span aria-hidden="true">→</span></button></div><div class="bottom-note">HISTÓRIA · GEOGRAFIA · ARTE</div></div></section>
-<section class="screen presentation" id="presentation" aria-label="Apresentação dos grupos" aria-hidden="true"><header class="topbar"><div class="brand"><button class="brand-mark brand-home" id="brandHomeBtn" type="button" aria-label="Voltar à tela inicial" title="Voltar à tela inicial"><img src="imgs/brasao.png" alt="Brasão de São Pedro do Ivaí" onerror="this.style.display='none'"></button><div><div class="brand-title">São Pedro do Ivaí</div><div class="brand-subtitle">Nossa História, Nossa Terra</div></div></div><nav class="group-nav" aria-label="Navegação dos grupos"><button class="group-btn active" data-group="1" aria-pressed="true">Grupo 1</button><button class="group-btn" data-group="2" aria-pressed="false">Grupo 2</button><button class="group-btn" data-group="3" aria-pressed="false">Grupo 3</button><button class="group-btn" data-group="4" aria-pressed="false">Grupo 4</button><button class="group-btn" data-group="5" aria-pressed="false">Grupo 5</button></nav></header>
+<section class="screen presentation" id="presentation" aria-label="Apresentação dos grupos" aria-hidden="true"><header class="topbar"><div class="brand"><button class="brand-mark brand-home" id="brandHomeBtn" type="button" aria-label="Voltar à tela inicial" title="Voltar à tela inicial"><img src="brasao.png" alt="Brasão de São Pedro do Ivaí" onerror="this.style.display='none'"></button><div><div class="brand-title">São Pedro do Ivaí</div><div class="brand-subtitle">Nossa História, Nossa Terra</div></div></div><nav class="group-nav" aria-label="Navegação dos grupos"><button class="group-btn active" data-group="1" aria-pressed="true">Grupo 1</button><button class="group-btn" data-group="2" aria-pressed="false">Grupo 2</button><button class="group-btn" data-group="3" aria-pressed="false">Grupo 3</button><button class="group-btn" data-group="4" aria-pressed="false">Grupo 4</button><button class="group-btn" data-group="5" aria-pressed="false">Grupo 5</button></nav></header>
 <div class="content-wrap" id="contentWrap"><div class="mindmap" id="mindmap"><div class="map-heading"><div class="eyebrow">Grupo 1 · História e patrimônio do Paraná</div><h2>Memória que conecta passado, presente e futuro</h2><p>Três caminhos para compreender, valorizar e preservar o patrimônio paranaense.</p></div><div class="map-core" aria-hidden="true">🧭 PATRIMÔNIO DO PARANÁ<small>História · Natureza · Preservação</small></div>
 <div class="journey-intro"><span class="journey-dot">✦</span><p><strong>Uma trilha pela memória do Paraná</strong><br>Acompanhe os três pontos conectados: primeiro, os vestígios da história; depois, a relação entre natureza e cultura; por fim, as formas de proteger esse legado.</p></div><div class="branches">
-<article class="branch is-selected" data-branch="0"><div class="branch-image"><img src="imgs/sitioarqueologico.png" alt="Sítio arqueológico histórico" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1000&q=80'"></div><div class="branch-body"><span class="branch-label">⛪ Passado · Séculos XVI–XVIII</span><h3>Sítios Arqueológicos Históricos</h3><p class="branch-intro">Sítios arqueológicos guardam marcas materiais de outras épocas: ruínas, objetos e estruturas. No Paraná, revelam a presença indígena anterior à colonização e a disputa pelo território com a chegada dos europeus.</p><div class="topic"><strong>Ruínas de Ciudad Real del Guairá — Terra Roxa</strong><p>Fundada por espanhóis em 1556 em Terra Roxa, Ciudad Real del Guairá integrava a rede colonial no vale do Paraná. No século XVII, ataques de bandeirantes levaram à destruição e ao abandono. Suas ruínas mostram como a colonização transformou a vida indígena e gerou disputas pelo território.</p></div><div class="topic"><strong>Redução Jesuítica de Santo Inácio Mini — região de Nossa Senhora de Loreto</strong><p>Santo Inácio Mini fazia parte das reduções jesuíticas do Guairá. Os jesuítas reuniam e convertam indígenas Guarani em comunidades de missão. Para os povos indígenas, isso significou mudanças profundas em costumes, território e autonomia. No século XVII, ataques levaram ao abandono e ao deslocamento de muitas dessas reduções.</p></div><div class="topic"><strong>Fortaleza de Nossa Senhora dos Prazeres — Ilha do Mel</strong><p>Construída no século XVIII na Ilha do Mel, a fortaleza protegia a entrada da Baía de Paranaguá. Controlava a circulação de embarcações e defendia o litoral. Hoje é patrimônio histórico e arquitetônico, mostrando como Portugal controlava pontos estratégicos da costa.</p></div><div class="branch-foot">💡 Por que isso importa? Os vestígios materiais complementam os documentos escritos — que nem sempre registram a experiência de todos os grupos. A arqueologia pode revelar aspectos da vida cotidiana e dar mais visibilidade às histórias indígenas e de outras populações pouco representadas nos relatos oficiais.</div></div></article>
-<article class="branch" data-branch="1"><div class="branch-image"><img src="imgs/patrimonio.png" alt="Preservação do patrimônio para o futuro" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1000&q=80'"></div><div class="branch-body"><span class="branch-label">🍃 Natureza · Paisagem</span><h3>Patrimônio Natural e Paisagens Culturais</h3><p class="branch-intro">Patrimônio natural: paisagens, espécies e formações geológicas. Paisagens culturais mostram a relação entre natureza e ação humana. No Paraná, florestas, serras e caminhos contam histórias de ocupação e lembram a necessidade de conservar.</p><div class="topic"><strong>Parque Nacional do Iguaçu — Foz do Iguaçu</strong><p>Criado em 1939, o Parque Nacional do Iguaçu protege a Mata Atlântica e as Cataratas. Abriga muitas espécies e, desde 1986, é Patrimônio Mundial da UNESCO. Também apoia pesquisa, educação ambiental e turismo responsável.</p></div><div class="topic"><strong>Parque Estadual de Vila Velha — Ponta Grossa</strong><p>Em Ponta Grossa, Vila Velha é famosa pelas formações de arenito esculpidas pela água e pelo tempo. Também tem furnas e campos naturais. As paisagens têm valor geológico e científico. A visitação deve seguir as trilhas para não danificar as rochas frágeis.</p></div><div class="topic"><strong>Caminho do Itupava e Estrada da Graciosa</strong><p>O Caminho do Itupava e a Estrada da Graciosa ligavam o planalto ao litoral pela Serra do Mar. Por ali circulavam pessoas, produtos e notícias. Hoje, além do valor histórico, permitem ver a Mata Atlântica e entender como o relevo guiava os deslocamentos.</p></div><div class="topic"><strong>Abrigo de Itatiba</strong><p>Abrigos rochosos guardam lascas, ferramentas de pedra e outros vestígios. A análise desses objetos revela técnicas e conhecimentos de grupos antigos. A conservação do local é essencial para que as pesquisas arqueológicas continuem possíveis.</p></div><div class="branch-foot">🌱 Preservar paisagens não significa apenas manter um lugar bonito. Significa proteger espécies, água, solo e formações geológicas, além de cuidar dos caminhos e espaços que fazem parte da memória coletiva. A conservação depende de políticas públicas, pesquisa, turismo responsável e atitudes cotidianas que evitem lixo, retirada de materiais e danos ao ambiente.</div></div></article>
-<article class="branch" data-branch="2"><div class="branch-image"><img src="imgs/paisagemcultural.png" alt="Paisagem natural e cultural do Paraná" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=1000&q=80'"></div><div class="branch-body"><span class="branch-label">🔮 Futuro · Preservação</span><h3>O Futuro da Memória</h3><p class="branch-intro">O patrimônio precisa ser identificado, estudado e cuidado. Obras e mudanças urbanas devem respeitar bens culturais e ambientais. Preservar não é impedir transformação: é planejar para que o progresso não apague a memória.</p><div class="topic"><strong>1. Arqueologia preventiva</strong><p>A arqueologia preventiva estuda áreas antes ou durante obras que possam afetar sítios. Fazem-se levantamentos e, se preciso, escavações. Quando há vestígios, o local pode ser protegido ou documentado. No Brasil isso segue normas oficiais de proteção do patrimônio.</p></div><div class="topic"><strong>2. Museu Paranaense (MUPA)</strong><p>O Museu Paranaense (Curitiba) preserva, pesquisa e divulga coleções de história, arqueologia e antropologia. Conserva objetos, monta exposições e aproxima o público das pesquisas sobre o território paranaense.</p></div><div class="topic"><strong>3. Digitalização e acesso</strong><p>A digitalização cria cópias de fotos, documentos e objetos, facilitando o acesso e protegendo originais frágeis. Modelos 3D e fotos registram o estado de monumentos. Ampliam o acesso, mas não substituem a conservação física e as cópias de segurança.</p></div><div class="branch-foot">🔎 Preservar é um trabalho coletivo. Poder público, pesquisadores, escolas, comunidades e visitantes podem contribuir respeitando os locais, denunciando danos, valorizando museus e compartilhando informação responsável. Quando o patrimônio é cuidado, as próximas gerações recebem não apenas objetos antigos, mas também oportunidades de aprender, fazer perguntas e compreender melhor o presente.</div></div></article>
+<article class="branch is-selected" data-branch="0"><div class="branch-image"><img src="sitioarqueologico.png" alt="Sítio arqueológico histórico" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1000&q=80'"></div><div class="branch-body"><span class="branch-label">⛪ Passado · Séculos XVI–XVIII</span><h3>Sítios Arqueológicos Históricos</h3><p class="branch-intro">Sítios arqueológicos guardam marcas materiais de outras épocas: ruínas, objetos e estruturas. No Paraná, revelam a presença indígena anterior à colonização e a disputa pelo território com a chegada dos europeus.</p><div class="topic"><strong>Ruínas de Ciudad Real del Guairá — Terra Roxa</strong><p>Fundada por espanhóis em 1556 em Terra Roxa, Ciudad Real del Guairá integrava a rede colonial no vale do Paraná. No século XVII, ataques de bandeirantes levaram à destruição e ao abandono. Suas ruínas mostram como a colonização transformou a vida indígena e gerou disputas pelo território.</p></div><div class="topic"><strong>Redução Jesuítica de Santo Inácio Mini — região de Nossa Senhora de Loreto</strong><p>Santo Inácio Mini fazia parte das reduções jesuíticas do Guairá. Os jesuítas reuniam e convertam indígenas Guarani em comunidades de missão. Para os povos indígenas, isso significou mudanças profundas em costumes, território e autonomia. No século XVII, ataques levaram ao abandono e ao deslocamento de muitas dessas reduções.</p></div><div class="topic"><strong>Fortaleza de Nossa Senhora dos Prazeres — Ilha do Mel</strong><p>Construída no século XVIII na Ilha do Mel, a fortaleza protegia a entrada da Baía de Paranaguá. Controlava a circulação de embarcações e defendia o litoral. Hoje é patrimônio histórico e arquitetônico, mostrando como Portugal controlava pontos estratégicos da costa.</p></div><div class="branch-foot">💡 Por que isso importa? Os vestígios materiais complementam os documentos escritos — que nem sempre registram a experiência de todos os grupos. A arqueologia pode revelar aspectos da vida cotidiana e dar mais visibilidade às histórias indígenas e de outras populações pouco representadas nos relatos oficiais.</div></div></article>
+<article class="branch" data-branch="1"><div class="branch-image"><img src="patrimonio.png" alt="Preservação do patrimônio para o futuro" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1000&q=80'"></div><div class="branch-body"><span class="branch-label">🍃 Natureza · Paisagem</span><h3>Patrimônio Natural e Paisagens Culturais</h3><p class="branch-intro">Patrimônio natural: paisagens, espécies e formações geológicas. Paisagens culturais mostram a relação entre natureza e ação humana. No Paraná, florestas, serras e caminhos contam histórias de ocupação e lembram a necessidade de conservar.</p><div class="topic"><strong>Parque Nacional do Iguaçu — Foz do Iguaçu</strong><p>Criado em 1939, o Parque Nacional do Iguaçu protege a Mata Atlântica e as Cataratas. Abriga muitas espécies e, desde 1986, é Patrimônio Mundial da UNESCO. Também apoia pesquisa, educação ambiental e turismo responsável.</p></div><div class="topic"><strong>Parque Estadual de Vila Velha — Ponta Grossa</strong><p>Em Ponta Grossa, Vila Velha é famosa pelas formações de arenito esculpidas pela água e pelo tempo. Também tem furnas e campos naturais. As paisagens têm valor geológico e científico. A visitação deve seguir as trilhas para não danificar as rochas frágeis.</p></div><div class="topic"><strong>Caminho do Itupava e Estrada da Graciosa</strong><p>O Caminho do Itupava e a Estrada da Graciosa ligavam o planalto ao litoral pela Serra do Mar. Por ali circulavam pessoas, produtos e notícias. Hoje, além do valor histórico, permitem ver a Mata Atlântica e entender como o relevo guiava os deslocamentos.</p></div><div class="topic"><strong>Abrigo de Itatiba</strong><p>Abrigos rochosos guardam lascas, ferramentas de pedra e outros vestígios. A análise desses objetos revela técnicas e conhecimentos de grupos antigos. A conservação do local é essencial para que as pesquisas arqueológicas continuem possíveis.</p></div><div class="branch-foot">🌱 Preservar paisagens não significa apenas manter um lugar bonito. Significa proteger espécies, água, solo e formações geológicas, além de cuidar dos caminhos e espaços que fazem parte da memória coletiva. A conservação depende de políticas públicas, pesquisa, turismo responsável e atitudes cotidianas que evitem lixo, retirada de materiais e danos ao ambiente.</div></div></article>
+<article class="branch" data-branch="2"><div class="branch-image"><img src="paisagemcultural.png" alt="Paisagem natural e cultural do Paraná" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=1000&q=80'"></div><div class="branch-body"><span class="branch-label">🔮 Futuro · Preservação</span><h3>O Futuro da Memória</h3><p class="branch-intro">O patrimônio precisa ser identificado, estudado e cuidado. Obras e mudanças urbanas devem respeitar bens culturais e ambientais. Preservar não é impedir transformação: é planejar para que o progresso não apague a memória.</p><div class="topic"><strong>1. Arqueologia preventiva</strong><p>A arqueologia preventiva estuda áreas antes ou durante obras que possam afetar sítios. Fazem-se levantamentos e, se preciso, escavações. Quando há vestígios, o local pode ser protegido ou documentado. No Brasil isso segue normas oficiais de proteção do patrimônio.</p></div><div class="topic"><strong>2. Museu Paranaense (MUPA)</strong><p>O Museu Paranaense (Curitiba) preserva, pesquisa e divulga coleções de história, arqueologia e antropologia. Conserva objetos, monta exposições e aproxima o público das pesquisas sobre o território paranaense.</p></div><div class="topic"><strong>3. Digitalização e acesso</strong><p>A digitalização cria cópias de fotos, documentos e objetos, facilitando o acesso e protegendo originais frágeis. Modelos 3D e fotos registram o estado de monumentos. Ampliam o acesso, mas não substituem a conservação física e as cópias de segurança.</p></div><div class="branch-foot">🔎 Preservar é um trabalho coletivo. Poder público, pesquisadores, escolas, comunidades e visitantes podem contribuir respeitando os locais, denunciando danos, valorizando museus e compartilhando informação responsável. Quando o patrimônio é cuidado, as próximas gerações recebem não apenas objetos antigos, mas também oportunidades de aprender, fazer perguntas e compreender melhor o presente.</div></div></article>
 </div><p class="map-note">Ideia central: conhecer o patrimônio é o primeiro passo para valorizá-lo e protegê-lo.</p></div></div></section></main>
 <button class="exit-fullscreen" id="presentationModeBtn" type="button" aria-pressed="false">▶ Começar apresentação</button>
 <script>
@@ -875,7 +1068,7 @@ function selectGroup(number){
  groupButtons.forEach(b=>{const active=Number(b.dataset.group)===number;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});
  contentWrap.classList.remove('group-enter');
  if(number===1){contentWrap.innerHTML=groupOneHTML;initMapControls();}
- else if(number===4){contentWrap.innerHTML=groupFourHTML.replaceAll('__WORKERS__','imgs/trabalhadores.png').replaceAll('__JOURNAL__','imgs/jornal.png').replaceAll('__AGRO__','imgs/agro.png').replaceAll('__GRANJA__','imgs/granja.png').replaceAll('__FAIR__','imgs/feira.png').replaceAll('__SUNFLOWER__','imgs/girassol.png').replaceAll('__MACAW__','imgs/arara.png');installReliableImageFallbacks(contentWrap);initMapControls();}
+ else if(number===4){contentWrap.innerHTML=groupFourHTML.replaceAll('__WORKERS__','trabalhadores.png').replaceAll('__JOURNAL__','jornal.png').replaceAll('__AGRO__','agro.png').replaceAll('__GRANJA__','granja.png').replaceAll('__FAIR__','feira.png').replaceAll('__SUNFLOWER__','girassol.png').replaceAll('__MACAW__','arara.png');installReliableImageFallbacks(contentWrap);initMapControls();}
  else{contentWrap.innerHTML=`<div class="reserved"><div class="reserved-card"><div class="eyebrow">Trabalho Integrador · Paraná</div><h2>Grupo ${number}</h2><p>Este espaço está reservado para o conteúdo do Grupo ${number}. O Grupo 1 e o Grupo 4 já estão disponíveis.</p><span class="group-indicator">Área reservada · Grupo ${number}</span></div></div>`;}
  void contentWrap.offsetWidth;contentWrap.classList.add('group-enter');contentWrap.scrollTo({top:0,behavior:'smooth'});
 }
