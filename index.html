@@ -1068,7 +1068,7 @@ function selectGroup(number){
  groupButtons.forEach(b=>{const active=Number(b.dataset.group)===number;b.classList.toggle('active',active);b.setAttribute('aria-pressed',String(active))});
  contentWrap.classList.remove('group-enter');
  if(number===1){contentWrap.innerHTML=groupOneHTML;initMapControls();}
- else if(number===4){contentWrap.innerHTML=groupFourHTML.replaceAll('__WORKERS__','trabalhadores.png').replaceAll('__JOURNAL__','jornal.png').replaceAll('__AGRO__','agro.png').replaceAll('__GRANJA__','granja.png').replaceAll('__FAIR__','feira.png').replaceAll('__SUNFLOWER__','girassol.png').replaceAll('__MACAW__','arara.png');installReliableImageFallbacks(contentWrap);initMapControls();}
+ else if(number===4){contentWrap.innerHTML=groupFourHTML.replaceAll('__WORKERS__','trabalhadores.png').replaceAll('__JOURNAL__','jornal.webp').replaceAll('__AGRO__','agro.png').replaceAll('__GRANJA__','granja.webp').replaceAll('__FAIR__','feira.png').replaceAll('__SUNFLOWER__','girassol.png').replaceAll('__MACAW__','arara.png');installReliableImageFallbacks(contentWrap);initMapControls();}
  else{contentWrap.innerHTML=`<div class="reserved"><div class="reserved-card"><div class="eyebrow">Trabalho Integrador · Paraná</div><h2>Grupo ${number}</h2><p>Este espaço está reservado para o conteúdo do Grupo ${number}. O Grupo 1 e o Grupo 4 já estão disponíveis.</p><span class="group-indicator">Área reservada · Grupo ${number}</span></div></div>`;}
  void contentWrap.offsetWidth;contentWrap.classList.add('group-enter');contentWrap.scrollTo({top:0,behavior:'smooth'});
 }
