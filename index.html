@@ -1158,6 +1158,51 @@ body.started .exit-fullscreen{display:inline-flex;animation:controlAppear .45s .
   margin-right: auto !important;
 }
 
+
+/* MOLDURA em volta de fotos e cards */
+.branch-photo-outside,
+.group4 .branch-photo-outside {
+  padding: 10px !important;
+  border-radius: 24px !important;
+  border: 2px solid #c9b45a !important;
+  background: linear-gradient(145deg, #f8f3dc, #eef3e4) !important;
+  box-shadow:
+    0 0 0 4px rgba(201, 180, 90, 0.22),
+    0 12px 30px rgba(30, 50, 28, 0.12) !important;
+  overflow: hidden !important;
+}
+.branch-photo-outside img,
+.group4 .branch-photo-outside img {
+  border-radius: 16px !important;
+  border: 1px solid rgba(90, 110, 70, 0.2) !important;
+  display: block !important;
+  width: 100% !important;
+  height: auto !important;
+}
+.branch-photo-caption {
+  border-radius: 10px !important;
+  border: 1px solid rgba(201, 180, 90, 0.45) !important;
+}
+
+.branch-unit > .branch,
+.group4 .branch-unit > .branch {
+  border: 2px solid #b7c8a6 !important;
+  border-radius: 24px !important;
+  background: linear-gradient(165deg, #ffffff 0%, #f6f8ef 100%) !important;
+  box-shadow:
+    0 0 0 4px rgba(183, 200, 166, 0.25),
+    0 12px 30px rgba(30, 50, 28, 0.10) !important;
+  overflow: hidden !important;
+}
+.branch-unit > .branch:before,
+.group4 .branch-unit > .branch:before {
+  content: "" !important;
+  display: block !important;
+  height: 6px !important;
+  background: linear-gradient(90deg, #c7b45e, #8fa872 50%, #c7b45e) !important;
+  border-radius: 24px 24px 0 0 !important;
+}
+
 </style>
 </head>
 <body>
