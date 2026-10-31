@@ -458,32 +458,7 @@ body.started .exit-fullscreen{display:inline-flex;animation:controlAppear .45s .
   padding: 7px 12px !important;
 }
 
-/* Trilha = risquinhos - - - - - - ligando foto → card → foto → card */
-.branches:before,
-.group4 .branches:before {
-  content: "" !important;
-  position: absolute !important;
-  left: 50% !important;
-  top: -50px !important;
-  bottom: -50px !important;
-  width: 6px !important;
-  transform: translateX(-50%) !important;
-  border: none !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
-  opacity: 1 !important;
-  z-index: 0 !important;
-  /* traços bem definidos: - - - - - - - - */
-  background-image: repeating-linear-gradient(
-    to bottom,
-    #3e6242 0 14px,
-    transparent 14px 26px
-  ) !important;
-  background-size: 6px 26px !important;
-  background-repeat: repeat-y !important;
-  background-position: center top !important;
-  background-color: transparent !important;
-}
+
 .branch-unit:before {
   /* nó da trilha bem visível */
   width: 62px !important;
@@ -540,7 +515,14 @@ body.started .exit-fullscreen{display:inline-flex;animation:controlAppear .45s .
 }
 
 
-/* FORÇA FINAL da trilha: - - - - - - - - conectando tudo */
+
+
+/* ========== TRILHA - - - - - - VISÍVEL ========== */
+.branches,
+.group4 .branches {
+  position: relative !important;
+  isolation: isolate !important;
+}
 .branches:before,
 .group4 .branches:before,
 .mindmap .branches:before {
@@ -548,10 +530,9 @@ body.started .exit-fullscreen{display:inline-flex;animation:controlAppear .45s .
   display: block !important;
   position: absolute !important;
   left: 50% !important;
-  top: -60px !important;
-  bottom: -60px !important;
-  width: 8px !important;
-  height: auto !important;
+  top: 0 !important;
+  bottom: 0 !important;
+  width: 10px !important;
   transform: translateX(-50%) !important;
   margin: 0 !important;
   padding: 0 !important;
@@ -560,44 +541,102 @@ body.started .exit-fullscreen{display:inline-flex;animation:controlAppear .45s .
   outline: none !important;
   box-shadow: none !important;
   opacity: 1 !important;
-  z-index: 0 !important;
+  visibility: visible !important;
   pointer-events: none !important;
-  background: repeating-linear-gradient(
-    to bottom,
-    #2f5037 0px,
-    #2f5037 12px,
-    transparent 12px,
-    transparent 24px
-  ) !important;
-  background-size: 8px 24px !important;
-  background-repeat: repeat-y !important;
-  background-position: center top !important;
+  z-index: 1 !important; /* atrás dos cards (z-index maior), na frente do fundo */
   background-color: transparent !important;
   background-image: repeating-linear-gradient(
     to bottom,
-    #2f5037 0px,
-    #2f5037 12px,
-    transparent 12px,
-    transparent 24px
+    #2a4730 0px,
+    #2a4730 11px,
+    transparent 11px,
+    transparent 22px
   ) !important;
+  background-size: 10px 22px !important;
+  background-repeat: repeat-y !important;
+  background-position: center top !important;
+}
+/* cards e fotos na frente da trilha */
+.branch-unit,
+.group4 .branch-unit {
+  position: relative !important;
+  z-index: 2 !important;
+}
+.branch-unit > .branch,
+.branch-photo-outside {
+  position: relative !important;
+  z-index: 3 !important;
+}
+/* nós da trilha bem na frente */
+.branch-unit:before {
+  z-index: 4 !important;
 }
 @media (max-width: 760px) {
   .branches:before,
   .group4 .branches:before,
   .mindmap .branches:before {
-    left: 22px !important;
+    left: 20px !important;
     transform: none !important;
-    width: 6px !important;
-    top: -30px !important;
-    bottom: -30px !important;
-    background: repeating-linear-gradient(
+    width: 8px !important;
+    background-image: repeating-linear-gradient(
       to bottom,
-      #2f5037 0px,
-      #2f5037 10px,
-      transparent 10px,
-      transparent 20px
+      #2a4730 0px,
+      #2a4730 9px,
+      transparent 9px,
+      transparent 18px
     ) !important;
-    background-size: 6px 20px !important;
+    background-size: 8px 18px !important;
+  }
+}
+
+
+
+/* desliga todas as trilhas antigas de :before */
+.branches:before,
+.group4 .branches:before,
+.mindmap .branches:before {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  opacity: 0 !important;
+}
+
+
+/* Trilha estilo rota de avião: linha pontilhada ondulada */
+.trail-svg {
+  position: absolute !important;
+  left: 0 !important;
+  top: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+  overflow: visible !important;
+}
+.trail-svg path {
+  fill: none !important;
+  stroke: #1a2f1e !important;
+  stroke-width: 4 !important;
+  stroke-linecap: round !important;
+  stroke-linejoin: round !important;
+  stroke-dasharray: 2 14 !important;
+  opacity: 0.95 !important;
+}
+.trail-svg .trail-pin {
+  fill: #2a4730 !important;
+}
+.branch-unit {
+  position: relative !important;
+  z-index: 2 !important;
+}
+@media (max-width: 760px) {
+  .trail-svg path {
+    stroke-width: 3.2 !important;
+    stroke-dasharray: 2 12 !important;
   }
 }
 
@@ -609,7 +648,7 @@ body.started .exit-fullscreen{display:inline-flex;animation:controlAppear .45s .
 <section class="screen intro" id="intro" aria-label="Introdução"><div class="intro-card"><div class="eyebrow">Trabalho Integrador · Paraná</div><h1>São Pedro do Ivaí<span>Nossa História, Nossa Terra</span></h1><p class="subtitle">Uma apresentação sobre o lugar que faz parte da nossa história, da nossa cultura e da nossa identidade.</p><div class="actions"><button class="btn btn-secondary" id="fullscreenBtn" type="button">⛶ Tela cheia</button><button class="btn btn-primary" id="startBtn" type="button">Começar apresentação <span aria-hidden="true">→</span></button></div><div class="bottom-note">HISTÓRIA · GEOGRAFIA · ARTE</div></div></section>
 <section class="screen presentation" id="presentation" aria-label="Apresentação dos grupos" aria-hidden="true"><header class="topbar"><div class="brand"><button class="brand-mark brand-home" id="brandHomeBtn" type="button" aria-label="Voltar à tela inicial" title="Voltar à tela inicial"><img src="https://raw.githubusercontent.com/NikolasLindo/Sao-Pedro-Do-Ivai---Nossa-Historia-Nossa-Terra/refs/heads/main/brasao.png" alt="Brasão de São Pedro do Ivaí" onerror="this.style.display='none'"></button><div><div class="brand-title">São Pedro do Ivaí</div><div class="brand-subtitle">Nossa História, Nossa Terra</div></div></div><nav class="group-nav" aria-label="Navegação dos grupos"><button class="group-btn active" data-group="1" aria-pressed="true">Grupo 1</button><button class="group-btn" data-group="2" aria-pressed="false">Grupo 2</button><button class="group-btn" data-group="3" aria-pressed="false">Grupo 3</button><button class="group-btn" data-group="4" aria-pressed="false">Grupo 4</button><button class="group-btn" data-group="5" aria-pressed="false">Grupo 5</button></nav></header>
 <div class="content-wrap" id="contentWrap"><div class="mindmap" id="mindmap"><div class="map-heading"><div class="eyebrow">Grupo 1 · História e patrimônio do Paraná</div><h2>Memória que conecta passado, presente e futuro</h2><p>Três caminhos para compreender, valorizar e preservar o patrimônio paranaense.</p></div><div class="map-core" aria-hidden="true">🧭 PATRIMÔNIO DO PARANÁ<small>História · Natureza · Preservação</small></div>
-<div class="journey-intro"><span class="journey-dot">✦</span><p><strong>Uma trilha pela memória do Paraná</strong><br>Acompanhe os três pontos conectados: primeiro, os vestígios da história; depois, a relação entre natureza e cultura; por fim, as formas de proteger esse legado.</p></div><div class="map-hint">Os tópicos de cada etapa podem ser abertos ao clicar no título.</div><div class="branches">
+<div class="journey-intro"><span class="journey-dot">✦</span><p><strong>Uma trilha pela memória do Paraná</strong><br>Acompanhe os três pontos conectados: primeiro, os vestígios da história; depois, a relação entre natureza e cultura; por fim, as formas de proteger esse legado.</p></div><div class="branches">
 <article class="branch is-selected" data-branch="0"><div class="branch-image"><img src="https://raw.githubusercontent.com/NikolasLindo/Sao-Pedro-Do-Ivai---Nossa-Historia-Nossa-Terra/refs/heads/main/sitioarqueologico.png" alt="Sítio arqueológico histórico" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1000&q=80'"></div><div class="branch-body"><span class="branch-label">⛪ Passado · Séculos XVI–XVIII</span><h3>Sítios Arqueológicos Históricos</h3><p class="branch-intro">Sítios arqueológicos guardam marcas materiais de outras épocas: ruínas, objetos e estruturas. No Paraná, revelam a presença indígena anterior à colonização e a disputa pelo território com a chegada dos europeus.</p><div class="topic"><strong>Ruínas de Ciudad Real del Guairá — Terra Roxa</strong><p>Fundada por espanhóis em 1556 em Terra Roxa, Ciudad Real del Guairá integrava a rede colonial no vale do Paraná. No século XVII, ataques de bandeirantes levaram à destruição e ao abandono. Suas ruínas mostram como a colonização transformou a vida indígena e gerou disputas pelo território.</p></div><div class="topic"><strong>Redução Jesuítica de Santo Inácio Mini — região de Nossa Senhora de Loreto</strong><p>Santo Inácio Mini fazia parte das reduções jesuíticas do Guairá. Os jesuítas reuniam e convertam indígenas Guarani em comunidades de missão. Para os povos indígenas, isso significou mudanças profundas em costumes, território e autonomia. No século XVII, ataques levaram ao abandono e ao deslocamento de muitas dessas reduções.</p></div><div class="topic"><strong>Fortaleza de Nossa Senhora dos Prazeres — Ilha do Mel</strong><p>Construída no século XVIII na Ilha do Mel, a fortaleza protegia a entrada da Baía de Paranaguá. Controlava a circulação de embarcações e defendia o litoral. Hoje é patrimônio histórico e arquitetônico, mostrando como Portugal controlava pontos estratégicos da costa.</p></div><div class="branch-foot">💡 Por que isso importa? Os vestígios materiais complementam os documentos escritos — que nem sempre registram a experiência de todos os grupos. A arqueologia pode revelar aspectos da vida cotidiana e dar mais visibilidade às histórias indígenas e de outras populações pouco representadas nos relatos oficiais.</div></div></article>
 <article class="branch" data-branch="1"><div class="branch-image"><img src="https://raw.githubusercontent.com/NikolasLindo/Sao-Pedro-Do-Ivai---Nossa-Historia-Nossa-Terra/refs/heads/main/patrimonio.png" alt="Preservação do patrimônio para o futuro" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=1000&q=80'"></div><div class="branch-body"><span class="branch-label">🍃 Natureza · Paisagem</span><h3>Patrimônio Natural e Paisagens Culturais</h3><p class="branch-intro">Patrimônio natural: paisagens, espécies e formações geológicas. Paisagens culturais mostram a relação entre natureza e ação humana. No Paraná, florestas, serras e caminhos contam histórias de ocupação e lembram a necessidade de conservar.</p><div class="topic"><strong>Parque Nacional do Iguaçu — Foz do Iguaçu</strong><p>Criado em 1939, o Parque Nacional do Iguaçu protege a Mata Atlântica e as Cataratas. Abriga muitas espécies e, desde 1986, é Patrimônio Mundial da UNESCO. Também apoia pesquisa, educação ambiental e turismo responsável.</p></div><div class="topic"><strong>Parque Estadual de Vila Velha — Ponta Grossa</strong><p>Em Ponta Grossa, Vila Velha é famosa pelas formações de arenito esculpidas pela água e pelo tempo. Também tem furnas e campos naturais. As paisagens têm valor geológico e científico. A visitação deve seguir as trilhas para não danificar as rochas frágeis.</p></div><div class="topic"><strong>Caminho do Itupava e Estrada da Graciosa</strong><p>O Caminho do Itupava e a Estrada da Graciosa ligavam o planalto ao litoral pela Serra do Mar. Por ali circulavam pessoas, produtos e notícias. Hoje, além do valor histórico, permitem ver a Mata Atlântica e entender como o relevo guiava os deslocamentos.</p></div><div class="topic"><strong>Abrigo de Itatiba</strong><p>Abrigos rochosos guardam lascas, ferramentas de pedra e outros vestígios. A análise desses objetos revela técnicas e conhecimentos de grupos antigos. A conservação do local é essencial para que as pesquisas arqueológicas continuem possíveis.</p></div><div class="branch-foot">🌱 Preservar paisagens não significa apenas manter um lugar bonito. Significa proteger espécies, água, solo e formações geológicas, além de cuidar dos caminhos e espaços que fazem parte da memória coletiva. A conservação depende de políticas públicas, pesquisa, turismo responsável e atitudes cotidianas que evitem lixo, retirada de materiais e danos ao ambiente.</div></div></article>
 <article class="branch" data-branch="2"><div class="branch-image"><img src="https://raw.githubusercontent.com/NikolasLindo/Sao-Pedro-Do-Ivai---Nossa-Historia-Nossa-Terra/refs/heads/main/paisagemcultural.png" alt="Paisagem natural e cultural do Paraná" onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=1000&q=80'"></div><div class="branch-body"><span class="branch-label">🔮 Futuro · Preservação</span><h3>O Futuro da Memória</h3><p class="branch-intro">O patrimônio precisa ser identificado, estudado e cuidado. Obras e mudanças urbanas devem respeitar bens culturais e ambientais. Preservar não é impedir transformação: é planejar para que o progresso não apague a memória.</p><div class="topic"><strong>1. Arqueologia preventiva</strong><p>A arqueologia preventiva estuda áreas antes ou durante obras que possam afetar sítios. Fazem-se levantamentos e, se preciso, escavações. Quando há vestígios, o local pode ser protegido ou documentado. No Brasil isso segue normas oficiais de proteção do patrimônio.</p></div><div class="topic"><strong>2. Museu Paranaense (MUPA)</strong><p>O Museu Paranaense (Curitiba) preserva, pesquisa e divulga coleções de história, arqueologia e antropologia. Conserva objetos, monta exposições e aproxima o público das pesquisas sobre o território paranaense.</p></div><div class="topic"><strong>3. Digitalização e acesso</strong><p>A digitalização cria cópias de fotos, documentos e objetos, facilitando o acesso e protegendo originais frágeis. Modelos 3D e fotos registram o estado de monumentos. Ampliam o acesso, mas não substituem a conservação física e as cópias de segurança.</p></div><div class="branch-foot">🔎 Preservar é um trabalho coletivo. Poder público, pesquisadores, escolas, comunidades e visitantes podem contribuir respeitando os locais, denunciando danos, valorizando museus e compartilhando informação responsável. Quando o patrimônio é cuidado, as próximas gerações recebem não apenas objetos antigos, mas também oportunidades de aprender, fazer perguntas e compreender melhor o presente.</div></div></article>
@@ -717,6 +756,101 @@ function initMapControls(){
    const heading=topic.querySelector('strong');
    if(heading){heading.removeAttribute('tabindex');heading.removeAttribute('role');heading.removeAttribute('aria-expanded');}
  });
+ // Trilha ondulada (estilo rota) passando por cada foto e card
+ document.querySelectorAll('.branches').forEach(br=>{
+   br.querySelectorAll('.trail-svg, .trail-line').forEach(t=>t.remove());
+   const units=[...br.querySelectorAll('.branch-unit')];
+   if(!units.length) return;
+
+   const draw=()=>{
+     const svgOld=br.querySelector('.trail-svg');
+     if(svgOld) svgOld.remove();
+     const brRect=br.getBoundingClientRect();
+     const h=br.scrollHeight || brRect.height;
+     const w=br.clientWidth || brRect.width;
+     if(w<40 || h<40) return;
+
+     const pts=[];
+     units.forEach((unit,i)=>{
+       const ur=unit.getBoundingClientRect();
+       const photo=unit.querySelector('.branch-photo-outside');
+       const card=unit.querySelector('.branch');
+       const midY=ur.top - brRect.top + ur.height/2;
+       // alterna: ímpar foto esquerda / card direita; par card esquerda / foto direita
+       const photoLeft = (i % 2 === 0);
+       if(photo && card){
+         const pr=photo.getBoundingClientRect();
+         const cr=card.getBoundingClientRect();
+         const px=pr.left - brRect.left + pr.width/2;
+         const py=pr.top - brRect.top + pr.height/2;
+         const cx=cr.left - brRect.left + cr.width/2;
+         const cy=cr.top - brRect.top + cr.height/2;
+         if(photoLeft){ pts.push([px,py]); pts.push([cx,cy]); }
+         else { pts.push([cx,cy]); pts.push([px,py]); }
+       } else {
+         pts.push([w/2, midY]);
+       }
+     });
+     if(pts.length<2) return;
+
+     // path bem ondulado (estilo rota de avião)
+     let d=`M ${pts[0][0].toFixed(1)} ${pts[0][1].toFixed(1)}`;
+     for(let i=1;i<pts.length;i++){
+       const [x0,y0]=pts[i-1];
+       const [x1,y1]=pts[i];
+       const dx=x1-x0, dy=y1-y0;
+       // duas curvas por segmento pra ficar bem sinuoso
+       const wave = (i%2===0 ? 1 : -1) * Math.min(w*0.18, 90);
+       const c1x = x0 + dx*0.35 + wave;
+       const c1y = y0 + dy*0.25;
+       const c2x = x0 + dx*0.65 - wave*0.7;
+       const c2y = y0 + dy*0.75;
+       d+=` C ${c1x.toFixed(1)} ${c1y.toFixed(1)}, ${c2x.toFixed(1)} ${c2y.toFixed(1)}, ${x1.toFixed(1)} ${y1.toFixed(1)}`;
+     }
+
+     const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');
+     svg.setAttribute('class','trail-svg');
+     svg.setAttribute('aria-hidden','true');
+     svg.setAttribute('viewBox',`0 0 ${w} ${h}`);
+     svg.setAttribute('preserveAspectRatio','none');
+     svg.style.height=h+'px';
+
+     const path=document.createElementNS('http://www.w3.org/2000/svg','path');
+     path.setAttribute('d',d);
+     svg.appendChild(path);
+
+     // pin no início
+     const [sx,sy]=pts[0];
+     const pin=document.createElementNS('http://www.w3.org/2000/svg','g');
+     pin.innerHTML=`<circle cx="${sx}" cy="${sy}" r="7" fill="#2a4730"/><circle cx="${sx}" cy="${sy}" r="3.2" fill="#f7f5e8"/>`;
+     svg.appendChild(pin);
+
+     // bolinha no fim
+     const [ex,ey]=pts[pts.length-1];
+     const end=document.createElementNS('http://www.w3.org/2000/svg','circle');
+     end.setAttribute('cx',ex); end.setAttribute('cy',ey); end.setAttribute('r','6'); end.setAttribute('fill','#2a4730');
+     svg.appendChild(end);
+
+     br.insertBefore(svg, br.firstChild);
+   };
+
+   draw();
+   // redesenha após imagens carregarem / resize
+   setTimeout(draw, 400);
+   setTimeout(draw, 1200);
+   if(!window._trailResizeBound){
+     window._trailResizeBound=true;
+     window.addEventListener('resize',()=>{
+       document.querySelectorAll('.branches').forEach(b=>{
+         // trigger redraw by re-running init partially
+         const ev=new Event('trail-redraw');
+         b.dispatchEvent(ev);
+       });
+     });
+   }
+   br.addEventListener('trail-redraw', draw);
+ });
+
 }
 initMapControls();
 groupButtons.forEach(b=>b.addEventListener('click',()=>{if(body.classList.contains('slide-mode'))togglePresentationMode();selectGroup(Number(b.dataset.group));}));function syncFullscreen(){body.classList.toggle('is-fullscreen',isFullscreen());syncFullscreenButton()}document.addEventListener('fullscreenchange',syncFullscreen);document.addEventListener('webkitfullscreenchange',syncFullscreen);syncFullscreenButton();
